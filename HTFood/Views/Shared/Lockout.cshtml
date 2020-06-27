@@ -1,0 +1,63 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+
+    ViewBag.Title = "Locked Out";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<!--///-->
+<body class="theme-red">
+    <div class="authentication">
+        <div class="container-fluid">
+            <div class="row clearfix">
+                <div class="col-lg-8 col-md-12 col-sm-12">
+                    <div class="l-detail">
+                        <br><br><br><br>
+                        <h5>Welcome</h5>
+                        <h1>Hutech Food Admin</h1>
+                        <h3>Sign in to start your session</h3>
+                        <ul class="list-unstyled l-social">
+                            <li><a href="https://www.facebook.com/hutechuniversity/"><i class="zmdi zmdi-facebook-box"></i></a></li>
+                            <li><a href="https://hutech.edu.vn/"><i class="zmdi zmdi-linkedin-box"></i></a></li>
+                            <li><a href="#"><i class="zmdi zmdi-pinterest-box"></i></a></li>
+                            <li><a href="#"><i class="zmdi zmdi-twitter"></i></a></li>
+                            <li><a href="#"><i class="zmdi zmdi-instagram"></i></a></li>
+                        </ul>
+                        <ul class="list-unstyled l-menu">
+                            @*<li><a href="#">Contact Us</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">FAQ</a></li>*@
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="card">
+                        <h4 class="l-login m-b-20">Locked!!!</h4>
+                        <div class="locked">
+                           
+                            <h4 class="text-danger">Tài khoản này bị tạm khóa, vui lòng thử lại sau!!!</h4>
+                        </div>
+                     
+                        <div class="row">
+                            <div class="col-12">
+                                <a href="@Url.Action("Login","Account")" class="btn btn-raised waves-effect bg-red">Đăng nhập</a>
+                            </div>
+                            <div class="col-12"> <a href="sign-in.html">Báo lỗi</a> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery Core Js -->
+    @if (ViewBag.accept == null)
+    {
+        <script src="~/assets/bundles/libscripts.bundle.js"></script>
+    }
+    <script src="~/assets/bundles/vendorscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js -->
+
+    <script src="~/assets/bundles/mainscripts.bundle.js"></script><!-- Custom Js -->
+</body>
+<!--///-->

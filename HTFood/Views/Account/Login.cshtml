@@ -1,0 +1,86 @@
+﻿@using HTFood.Models
+@model LoginViewModel
+
+
+@{
+    ViewBag.Title = "Đăng nhập";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<!--///-->
+<body class="theme-red">
+    <div class="authentication">
+        <div class="container-fluid">
+            <div class="row clearfix">
+                <div class="col-lg-8 col-md-12 col-sm-12">
+                    <div class="l-detail">
+                        <br><br><br><br>
+                        <h5>Welcome</h5>
+                        <h1>Hutech Food Admin</h1>
+                        <h3>Sign in to start your session</h3>
+                        <ul class="list-unstyled l-social">
+                            <li><a href="https://www.facebook.com/hutechuniversity/"><i class="zmdi zmdi-facebook-box"></i></a></li>
+                            <li><a href="https://hutech.edu.vn/"><i class="zmdi zmdi-linkedin-box"></i></a></li>
+                            <li><a href="#"><i class="zmdi zmdi-pinterest-box"></i></a></li>
+                            <li><a href="#"><i class="zmdi zmdi-twitter"></i></a></li>
+                            <li><a href="#"><i class="zmdi zmdi-instagram"></i></a></li>
+                        </ul>
+                        <ul class="list-unstyled l-menu">
+                            @*<li><a href="#">Contact Us</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">FAQ</a></li>*@
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="card">
+                        <h4 class="l-login">Login</h4>
+                        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input type="text" class="form-control" name="Email">
+                                    <label class="form-label">Email</label>
+                                </div>
+                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                <c style="color: red">@ViewBag.Thongbao</c>
+                            </div>
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input type="password" class="form-control" name="Password">
+                                    <label class="form-label">Password</label>
+                                </div>
+                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                            </div>
+                            <div>
+                                <input type="checkbox" name="RememberMe" id="RememberMe" class="filled-in chk-col-cyan">
+                                <label for="RememberMe">Remember Me</label>
+                            </div>
+                            <button class="btn btn-raised waves-effect bg-red">SIGN IN</button>
+                            <input type="submit" value="Log in" class="btn btn-raised waves-effect bg-red" />
+                            @*<button class="btn btn-raised waves-effect">SIGN UP</button>*@
+                            @*<div class="text-left">
+                                    <a href="forgot-password.html">Forgot Password?</a>
+                                </div>*@
+                            <p>
+                                @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                            </p>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery Core Js -->
+    @if (ViewBag.accept == null)
+    {
+        <script src="~/assets/bundles/libscripts.bundle.js"></script>
+    }
+    <script src="~/assets/bundles/vendorscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js -->
+
+    <script src="~/assets/bundles/mainscripts.bundle.js"></script><!-- Custom Js -->
+</body>
+<!--///-->

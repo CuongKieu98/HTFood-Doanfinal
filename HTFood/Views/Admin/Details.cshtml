@@ -1,0 +1,51 @@
+﻿@model HTFood.Models.Admin
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Admin</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserAdmin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserAdmin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PassAdmin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PassAdmin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HotenAdmin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HotenAdmin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailAdmin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailAdmin)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
